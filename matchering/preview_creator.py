@@ -1,25 +1,7 @@
 # -*- coding: utf-8 -*-
 
-"""
-Matchering - Audio Matching and Mastering Python Library
-Copyright (C) 2016-2022 Sergree
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <https://www.gnu.org/licenses/>.
-"""
 
 import numpy as np
-
 from .log import Code, info, debug, debug_line
 from .dsp import size, strided_app_2d, batch_rms_2d, fade, clip
 from . import Config, Result
@@ -39,10 +21,8 @@ def create_preview(
 
     target = clip(target, config.threshold)
 
-    debug(
-        f"The maximum duration of the preview is {config.preview_size / config.internal_sample_rate} seconds, "
-        f"with the analysis step of {config.preview_analysis_step / config.internal_sample_rate} seconds"
-    )
+    debug(f"The maximum duration of the preview is {config.preview_size / config.internal_sample_rate} seconds, "
+        f"with the analysis step of {config.preview_analysis_step / config.internal_sample_rate} seconds")
 
     target_pieces = strided_app_2d(
         target, config.preview_size, config.preview_analysis_step

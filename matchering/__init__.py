@@ -1,16 +1,3 @@
-# -*- coding: utf-8 -*-
-
-"""
-Matchering
-~~~~~~~~~~~~~~~~~~~
-
-Audio Matching and Mastering Python Library
-
-:copyright: (C) 2016-2022 Sergree
-:license: GPLv3, see LICENSE for more details.
-
-"""
-
 __title__ = "matchering"
 
 __author__ = "Sergree"
